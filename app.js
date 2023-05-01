@@ -65,6 +65,12 @@ mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
 //for all routes
 app.use("/", routes)
 
+//serving static files
+app.use(express.static(path.join(__dirname, '../client/build')))
+app.get("*", function (req, res) {
+    res.sendFile(path.join(__dirname, '../client/build/index.html'))
+})
+
 
 var port = process.env.PORT || 8000
 app.listen(port, err => {
