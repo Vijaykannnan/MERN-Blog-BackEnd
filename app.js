@@ -33,7 +33,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 
 
 app.use(cors({
-//     origin: 'https://mern-blog-site-2fb1.onrender.com',
+    origin: 'https://mern-blog-site-nztg.onrender.com',
     credentials: true,
 }));
 app.use(express.json());
